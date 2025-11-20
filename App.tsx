@@ -299,7 +299,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0f0f12] text-slate-200 selection:bg-purple-500 selection:text-white font-sans">
+    <div className="min-h-screen bg-[#0f0f12] text-slate-200 selection:bg-purple-500 selection:text-white font-sans flex flex-col">
       <GuideModal isOpen={isGuideOpen} onClose={() => setIsGuideOpen(false)} />
 
       {/* Header */}
@@ -320,7 +320,7 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8 min-h-[calc(100vh-80px)] flex flex-col">
+      <main className="container mx-auto px-4 py-8 flex-1 flex flex-col">
         {/* Global Error */}
         {errorMsg && (
             <div className="w-full max-w-2xl mx-auto mb-8 p-4 bg-red-900/20 border border-red-500/50 rounded-lg text-red-200 text-center flex items-center justify-between">
@@ -365,9 +365,12 @@ const App: React.FC = () => {
         {(appState === AppState.RESULTS || appState === AppState.PLANNING || appState === AppState.SUITE_READY) && renderPhase1Results()}
 
       </main>
+
+      <footer className="w-full py-6 text-center border-t border-white/5 text-xs text-gray-600">
+         Open sourced by <a href="https://flypigai.icareu.tw/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors font-bold">FlyPig AI</a>
+      </footer>
     </div>
   );
 };
 
 export default App;
-    
